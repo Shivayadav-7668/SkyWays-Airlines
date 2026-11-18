@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SkyWays Airlines</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: white;
+    color: #123f70;
+}
+
+/* HEADER */
+header {
+    height: 195px;
+    background: linear-gradient(135deg, #063d73, #168bd5);
+    color: white;
+    position: relative;
+    padding: 35px 60px;
+    overflow: hidden;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-icon {
+    font-size: 60px;
+}
+
+.logo h1 {
+    font-size: 42px;
+    margin-bottom: 5px;
+}
+
+.logo h1 span {
+    color: #22a9ef;
+}
+
+.logo p {
+    font-size: 21px;
+    letter-spacing: 2px;
+}
+
+/* AIRPLANE */
+.airplane {
+    position: absolute;
+    right: 80px;
+    top: 30px;
+    font-size: 105px;
+    transform: rotate(-8deg);
+}
+
+/* NAVIGATION */
+nav {
+    height: 60px;
+    background: #073c72;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 17px 38px;
+    font-size: 19px;
+    border-radius: 6px;
+}
+
+nav a:hover,
+nav a.active {
+    background: #159bea;
+}
+
+/* MAIN LAYOUT */
+.container {
+    display: flex;
+    min-height: 700px;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 24%;
+    background: #e5f5ff;
+    padding: 42px 35px;
+}
+
+.sidebar h2 {
+    font-size: 26px;
+    margin-bottom: 30px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    margin: 25px 0;
+    font-size: 19px;
+}
+
+.sidebar li::before {
+    content: "✈";
+    margin-right: 15px;
+    color: #0878c9;
+}
+
+/* CONTENT */
+.content {
+    width: 76%;
+    padding: 40px 38px;
+}
+
+.content h2 {
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+.intro {
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+/* BOOKING BOX */
+.booking {
+    background: #e5f5ff;
+    border: 1px solid #9bd6f5;
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.booking h2 {
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+.form {
+    display: flex;
+    gap: 15px;
+    align-items: end;
+    flex-wrap: wrap;
+}
+
+.field {
+    flex: 1;
+    min-width: 150px;
+}
+
+.field label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.field input,
+.field select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #a8cfe8;
+    border-radius: 6px;
+    background: white;
+    font-size: 14px;
+}
+
+.search-btn {
+    background: #f9a900;
+    color: #123f70;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    background: #ffbd25;
+}
+
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin: 35px 0;
+}
+
+.feature {
+    width: 23%;
+    padding: 10px;
+    border-right: 1px solid #c5dce9;
+}
+
+.feature:last-child {
+    border-right: none;
+}
+
+.feature-icon {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.feature h3 {
+    margin-bottom: 8px;
+}
+
+.mission {
+    background: #e5f5ff;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.mission-image {
+    width: 40%;
+    height: 150px;
+    border-radius: 7px;
+    background:
+        linear-gradient(rgba(0,100,180,.2),rgba(0,100,180,.2)),
+        url("https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80")
+        center/cover;
+}
+
+.mission-text {
+    flex: 1;
+}
+
+.mission-text h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.mission-text p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+footer {
+    height: 100px;
+    background: #063d73;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 17px;
+}
+
+@media(max-width: 800px) {
+
+    header {
+        height: 160px;
+        padding: 25px;
+    }
+
+    .logo h1 {
+        font-size: 30px;
+    }
+
+    .logo p {
+        font-size: 14px;
+    }
+
+    .airplane {
+        display: none;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        height: auto;
+    }
+
+    nav a {
+        padding: 12px 15px;
+        font-size: 15px;
+    }
+
+    .container {
+        display: block;
+    }
+
+    .sidebar,
+    .content {
+        width: 100%;
+    }
+
+    .features {
+        display: block;
+    }
+
+    .feature {
+        width: 100%;
+        border-right: none;
+        margin: 25px 0;
+    }
+
+    .mission {
+        display: block;
+    }
+
+    .mission-image {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <div class="logo-icon">✈</div>
+        <div>
+            <h1>SkyWays <span>Airlines</span></h1>
+            <p>Fly Beyond Boundaries</p>
+        </div>
+    </div>
+
+    <div class="airplane">✈</div>
+</header>
+
+<nav>
+    <a href="#" class="active">Home</a>
+    <a href="#">About</a>
+    <a href="#">Flights</a>
+    <a href="#">Booking</a>
+    <a href="#">Contact</a>
+</nav>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <h2>✈ Quick Links</h2>
+
+        <ul>
+            <li>Book Flight</li>
+            <li>Flight Status</li>
+            <li>Manage Booking</li>
+            <li>Customer Support</li>
+        </ul>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="content">
+
+        <h2>Welcome to SkyWays Airlines</h2>
+
+        <p class="intro">
+            Your journey begins with us. We connect people, places and possibilities.
+        </p>
+
+        <!-- BOOKING -->
+        <section class="booking">
+
+            <h2>✈ Book Your Flight</h2>
+
+            <div class="form">
+
+                <div class="field">
+                    <label>From</label>
+                    <input type="text" placeholder="Departure City">
+                </div>
+
+                <div class="field">
+                    <label>To</label>
+                    <input type="text" placeholder="Arrival City">
+                </div>
+
+                <div class="field">
+                    <label>Departure Date</label>
+                    <input type="date">
+                </div>
+
+                <div class="field">
+                    <label>Passengers</label>
+                    <select>
+                        <option>1 Passenger</option>
+                        <option>2 Passengers</option>
+                        <option>3 Passengers</option>
+                        <option>4 Passengers</option>
+                    </select>
+                </div>
+
+                <button class="search-btn">
+                    🔍 Search Flights
+                </button>
+
+            </div>
+        </section>
+
+        <!-- FEATURES -->
+        <section class="features">
+
+            <div class="feature">
+                <div class="feature-icon">✈️</div>
+                <h3>Wide Network</h3>
+                <p>Destinations across the globe</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🛡️</div>
+                <h3>Safe & Secure</h3>
+                <p>Your safety is our priority</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🎧</div>
+                <h3>24/7 Support</h3>
+                <p>We are always here to help</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">⭐</div>
+                <h3>Best Experience</h3>
+                <p>Comfortable & affordable travel</p>
+            </div>
+
+        </section>
+
+        <!-- MISSION -->
+        <section class="mission">
+
+            <div class="mission-image"></div>
+
+            <div class="mission-text">
+                <h2>🎯 Our Mission</h2>
+                <p>
+                    To provide safe, reliable and comfortable air travel
+                    while creating memorable experiences for every passenger.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+</div>
+
+<footer>
+    ✈ &nbsp;&nbsp; © 2026 SkyWays Airlines. All Rights Reserved.
+</footer>
+
+</body>
+</html>
